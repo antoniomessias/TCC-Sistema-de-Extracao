@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>Bem-vindo, {{ nome }}</h1>
+    <div>
+        <button id="theme-toggle">🌙 Modo Escuro</button>
+        <a href="/logout">
+            <button class="logout-btn">Sair</button>
+        </a>
+    </div>
+</header>
+
+<main>
+    <section>
+        <h2>Upload de Documento</h2>
+
+        <div class="upload-container">
+            <label for="file" class="upload-label">Selecionar PDF</label>
+            <input type="file" id="file" accept="application/pdf">
+            <span id="file-name">Nenhum arquivo selecionado</span><br><br><br>
+            <button id="process-btn" class="process-btn">Ler Documento</button>
+        </div>
+    </section>
+
+    <section>
+        <h2>Preview</h2>
+        <div class="preview-area" id="preview-area">
+            <p>Nenhum arquivo carregado.</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Resultados</h2>
+        <a href="/exportar_csv">
+            <button class="export-btn">Exportar CSV</button>
+        </a>
+        <div class="results" id="results"></div>
+    </section>
+</main>
+
+<footer>
+    <span>Antonio Messias - Luiz Henrique</span>
+    <span>Sistema de Extração Inteligente de Dados</span>
+</footer>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

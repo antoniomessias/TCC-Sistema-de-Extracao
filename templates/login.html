@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Sistema OCR</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>Sistema OCR - TCC</h1>
+    <button id="theme-toggle">🌙 Modo Escuro</button>
+</header>
+
+<div class="login-container">
+    <div class="login-card">
+        <h2>Login</h2>
+
+        {% if erro %}
+            <div class="login-error">{{ erro }}</div>
+        {% endif %}
+
+        <form method="POST">
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="senha" placeholder="Senha" required>
+            <button type="submit">Entrar</button>
+        </form>
+        <p style="margin-top:15px;">
+            Não possui conta? 
+            <a href="{{ url_for('criar_usuario') }}">Criar conta</a>
+        </p>
+    </div>
+</div>
+
+<footer>
+    <span>Antonio Messias - Luiz Henrique</span>
+    <span>Sistema de Extração Inteligente de Dados</span>
+</footer>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
+

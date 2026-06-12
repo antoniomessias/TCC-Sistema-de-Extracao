@@ -1,1 +1,0 @@
-# TCC-Sistema-de-Extracao

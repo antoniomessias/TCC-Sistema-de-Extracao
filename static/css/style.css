@@ -1,0 +1,306 @@
+/* ===============================
+   VARIÁVEIS DE TEMA
+================================= */
+:root {
+  --bg: #f4f6f9;
+  --text: #2c3e50;
+  --card: #ffffff;
+  --border: #e0e0e0;
+  --accent: #2563eb;
+  --accent-hover: #1e4ed8;
+  --success: #16a34a;
+  --success-hover: #15803d;
+  --shadow: rgba(0, 0, 0, 0.08);
+}
+
+/* Tema escuro */
+body.dark {
+  --bg: #0f172a;
+  --text: #f1f5f9;
+  --card: #1e293b;
+  --border: #334155;
+  --accent: #3b82f6;
+  --accent-hover: #2563eb;
+  --success: #22c55e;
+  --success-hover: #16a34a;
+  --shadow: rgba(0, 0, 0, 0.4);
+}
+
+/* ===============================
+   BASE
+================================= */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: 0.3s ease;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 0;
+  color: var(--accent);
+}
+
+/* ===============================
+   HEADER
+================================= */
+header {
+  background: var(--card);
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+#theme-toggle {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#theme-toggle:hover {
+  background: var(--accent-hover);
+}
+
+/* ===============================
+   LAYOUT PRINCIPAL
+================================= */
+main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Responsivo */
+@media (max-width: 1100px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===============================
+   CARDS
+================================= */
+section {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px var(--shadow);
+  border: 1px solid var(--border);
+}
+
+/* ===============================
+   UPLOAD
+================================= */
+#file {
+  display: none;
+}
+
+.upload-label {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent), #60a5fa);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.upload-label:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px var(--shadow);
+}
+
+.process-btn {
+  margin-top: 15px;
+  background: var(--success);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.process-btn:hover {
+  background: var(--success-hover);
+}
+
+/* ===============================
+   PREVIEW
+================================= */
+.preview-area {
+  width: 100%;
+  height: 75vh;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.preview-area iframe,
+.preview-area img {
+  width: 100%;
+  height: 100%;
+  border: none;
+  object-fit: contain;
+}
+
+/* ===============================
+   RESULTADOS
+================================= */
+.results {
+  min-height: 400px;
+  border-radius: 10px;
+  padding: 15px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  overflow-y: auto;
+}
+
+.result-item {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+  font-family: Consolas, monospace;
+}
+
+/* ===============================
+   FOOTER
+================================= */
+footer {
+  background: var(--card);
+  padding: 12px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border);
+}
+
+/* ===============================
+   LOGIN
+================================= */
+.login-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.login-card {
+  background: var(--card);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px var(--shadow);
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid var(--border);
+  transition: 0.3s ease;
+}
+
+.login-card h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: var(--accent);
+}
+
+.login-card input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.3s;
+}
+
+.login-card input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.login-card button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  background: var(--accent);
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-card button:hover {
+  background: var(--accent-hover);
+}
+
+.login-error {
+  color: #ef4444;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* ===============================
+   BOTÃO LOGOUT
+================================= */
+.logout-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+}
+/* ===============================
+   BOTÃO EXPORTAR CSV 
+================================= */
+.export-btn {
+  margin-top: 15px;
+  background: #0ea5e9;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.export-btn:hover {
+  background: #0284c7;
+}
+
+.summary-box {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: rgba(0, 123, 255, 0.08);
+}
